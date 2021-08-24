@@ -1,0 +1,10 @@
+extend type Query {
+    users(paramList: ListCondition): [User]
+}
+
+input ListCondition {
+    userList: [UserCondition]
+}
+
+
+

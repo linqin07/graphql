@@ -1,0 +1,31 @@
+scalar Long
+scalar Date
+# 查询
+#  schema 内有两个特殊类型，定义了每一个 GraphQL 查询的入口，都有一个 query 类型，可能有一个 mutation 类型
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    user(nickname: String!, id: Long, dateTime: Date): User
+    userList(paramList: [UserCondition]): [User]
+}
+
+type User {
+    id: String!
+    mail: String!
+    nickname: String!
+    dateTime: Date
+}
+
+input UserCondition {
+    id: String!
+    mail: String!
+    nickname: String!
+}
+
+# 变更查询
+type Mutation {
+    create(id: String!, mail: String!, nickname: String!): User
+}

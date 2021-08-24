@@ -1,0 +1,10 @@
+graphiql:
+  enabled: true
+  mapping: /graphiql
+
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+    corsEnabled: true
+

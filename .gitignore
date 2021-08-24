@@ -1,0 +1,7 @@
+.idea
+.mvn
+snc-ivory-chain
+*.iml
+mvnw
+mvnw.cmd
+/**/target/
