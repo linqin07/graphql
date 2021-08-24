@@ -28,7 +28,7 @@ query 查询，mutation 变更查询。在 graphql 实现中，查询是并行�
 
 内省，查询支持啥接口、参数、类型
 
-```json
+```
 # 查询schema里面的query、mutation
 query __schema {
   __schema {
@@ -143,7 +143,7 @@ java 代码
 
 schema
 
-```json
+```
 type Query {
     user(nickname: String!, id: Int): User
 }
@@ -156,7 +156,7 @@ type User {
 
 graphql 查询
 
-```json
+```
 query alias($id: Int=33445) {
   user (nickname: "ceshi", id: $id){
     id
@@ -185,7 +185,7 @@ return userArrayList;
 ```
 schema 
 
-```json
+```
 type Query {
 users(paramList: ListCondition): [User]
 }
@@ -209,7 +209,7 @@ type User {
 
 graphql 查询
 
-```json
+```
 query alias($paramList: ListCondition) {
 users (paramList: $paramList){
 id
@@ -247,7 +247,7 @@ id
   ```
   schema 
 
-  ```json
+  ```
   type Query {
     userList(paramList: [UserCondition]): [User]
   }
@@ -268,7 +268,7 @@ type User {
 
   graphql 查询
 
-  ```json
+  ```
 query alias($paramList: [UserCondition]) {
   userList (paramList: $paramList){
     id
@@ -291,7 +291,7 @@ query alias($paramList: [UserCondition]) {
 
 - resources/graphql 目录新建一个新的文件 query.graphqls，通过继承来继承前面的 Query,公共的 TYPE 是否复制都可以。
 
-  ```json
+  ```
   extend type Query {
       users(paramList: ListCondition): [User]
   }
@@ -406,7 +406,7 @@ public class CustomScalarTypeConfig {
 
 graphqls 文件
 
-```json
+```
 scalar Long
 scalar Date
 # 查询
